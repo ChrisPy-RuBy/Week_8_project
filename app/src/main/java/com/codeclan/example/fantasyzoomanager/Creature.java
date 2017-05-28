@@ -9,24 +9,31 @@ import java.util.ArrayList;
 public class Creature {
 
 
-    private String species;
-    private ArrayList<Food> fed = new ArrayList<Food>();
+    private String name;
+    private ArrayList<Feedable> fed = new ArrayList<Feedable>();
 
-    public Creature(String species) {
-        this.species = species;
-
-
+    public Creature(String name) {
+        this.name = name;
     }
 
-    public String getSpecies() {
-        return species;
+    public String getName() {
+        return name;
     }
 
     public boolean beenFed() {
         return fed.isEmpty();
     }
 
-    public void feed(Food food) {
-        fed.add(food);
+    public int feedAmount() {
+        return fed.size();
     }
+
+    public String feed(Feedable food) {
+        fed.add(food);
+        return "NOMNOMNOM";
+    }
+
+
+
+
 }

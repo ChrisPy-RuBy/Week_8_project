@@ -10,16 +10,18 @@ import static org.junit.Assert.*;
  */
 public class CreatureTest {
 
-    Creature creature;
-    Food food;
+    Creature manticore;
+    Creature leviathan;
+    Feedable meat;
+    Feedable fish;
 
     @Before
     public void before() {
-        creature = new Creature("Troll");
-        food = new Food();
+        manticore = new Manticore("Troll");
+        leviathan = new Leviathan("Swimmy");
+        meat = new Meat();
+        fish = new Fish();
     }
-
-
 
     @Test
     public void testObjectExists() {
@@ -30,13 +32,13 @@ public class CreatureTest {
     @Test
     public void testCreatureHasPropertySpecies() {
         Creature creature = new Creature("Species");
-        assertEquals("Species", creature.getSpecies());
+        assertEquals("Species", creature.getName());
     }
 
     @Test
     public void testCreatureHasPropertyDifferentSpecies() {
         Creature creature = new Creature("Manticore");
-        assertEquals("Manticore", creature.getSpecies());
+        assertEquals("Manticore", creature.getName());
     }
 
     @Test
@@ -47,7 +49,25 @@ public class CreatureTest {
 
     @Test
     public void testCreatureHasFood() {
-        creature.feed(food);
-        assertEquals(false, creature.beenFed());
+        manticore.feed(meat);
+        assertEquals(false, manticore.beenFed());
     }
+
+    @Test
+    public void testInterfaceWithFoodTypes() {
+        manticore.feed(meat);
+        manticore.feed(fish);
+        assertEquals(2, manticore.feedAmount());
+    }
+
+    @Test
+    public void testInterfaceWithNonAbstractCreatures() {
+        assertEquals("NOMNOMNOM", manticore.feed(meat));
+    }
+
+    @Test
+    public void testInterfaceWithNonAbstractCreaturesAnotherCreature() {
+        assertEquals("NOMNOMNOM", leviathan.feed(meat));
+    }
+
 }
