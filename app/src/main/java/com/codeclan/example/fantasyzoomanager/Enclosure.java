@@ -29,5 +29,13 @@ public class Enclosure {
     public void addCreature(Creature creature) {
         pen.add(creature);
     }
+
+    public void clearPen() {
+        pen.clear();
+    }
+
+    public void remove(Creature creature) {
+        pen.remove(creature);
+    }
 }
 

@@ -10,6 +10,14 @@ import static org.junit.Assert.*;
  */
 public class CreatureTest {
 
+    Creature creature;
+    Food food;
+
+    @Before
+    public void before() {
+        creature = new Creature("Troll");
+        food = new Food();
+    }
 
 
 
@@ -31,9 +39,15 @@ public class CreatureTest {
         assertEquals("Manticore", creature.getSpecies());
     }
 
-//    @Test
-//    public void testCreatureHasPropertyFood() {
-//        Creature creature = new Creature("Species");
-//
-//    }
+    @Test
+    public void testCreatureHasNoFood() {
+        Creature creature = new Creature("Species");
+        assertEquals(true, creature.beenFed());
+    }
+
+    @Test
+    public void testCreatureHasFood() {
+        creature.feed(food);
+        assertEquals(false, creature.beenFed());
+    }
 }

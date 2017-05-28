@@ -51,11 +51,29 @@ public class EnclosureTest {
     }
 
     @Test
-    public void enclusureHasMultipleCreatures() {
+    public void enclosureHasMultipleCreatures() {
         enclosure.addCreature(creature);
         enclosure.addCreature(creature2);
         assertEquals(2, enclosure.numberOfCreaturesInEnclosure());
     }
+
+    @Test
+    public void  enclosureCanBeCleared() {
+        enclosure.addCreature(creature);
+        enclosure.addCreature(creature2);
+        enclosure.clearPen();
+        assertEquals(0, enclosure.numberOfCreaturesInEnclosure());
+    }
+
+    @Test
+    public void specificCreatureCanBeRemovedFromPen() {
+        enclosure.addCreature(creature);
+        enclosure.addCreature(creature2);
+        enclosure.remove(creature);
+        assertEquals(1, enclosure.numberOfCreaturesInEnclosure());
+    }
+
+
 
 
 
