@@ -1,4 +1,8 @@
-package com.codeclan.example.fantasyzoomanager;
+package com.codeclan.example.fantasyzoomanager.Creatures;
+
+import android.util.Log;
+
+import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 
 import java.util.ArrayList;
 
@@ -6,7 +10,7 @@ import java.util.ArrayList;
  * Created by mac on 5/28/17.
  */
 
-public class Creature {
+public abstract class Creature {
 
 
     private String name;
@@ -31,6 +35,7 @@ public class Creature {
     public String feed(Feedable food) {
         fed.add(food);
         return "NOMNOMNOM";
+
     }
 
 

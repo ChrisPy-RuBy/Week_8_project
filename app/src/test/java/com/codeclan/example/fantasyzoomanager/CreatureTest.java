@@ -1,5 +1,12 @@
 package com.codeclan.example.fantasyzoomanager;
 
+import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
+import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
+import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
+import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
+import com.codeclan.example.fantasyzoomanager.Foods.Fish;
+import com.codeclan.example.fantasyzoomanager.Foods.Meat;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,26 +32,26 @@ public class CreatureTest {
 
     @Test
     public void testObjectExists() {
-        Creature creature = new Creature("Species");
-        assertNotNull(creature);
+        manticore = new Manticore("Troll");
+        assertNotNull(manticore);
     }
 
     @Test
     public void testCreatureHasPropertySpecies() {
-        Creature creature = new Creature("Species");
-        assertEquals("Species", creature.getName());
+        manticore = new Manticore("Troll");
+        assertEquals("Troll", manticore.getName());
     }
 
     @Test
     public void testCreatureHasPropertyDifferentSpecies() {
-        Creature creature = new Creature("Manticore");
-        assertEquals("Manticore", creature.getName());
+        manticore = new Manticore("Troll");
+        assertEquals("Troll", manticore.getName());
     }
 
     @Test
     public void testCreatureHasNoFood() {
-        Creature creature = new Creature("Species");
-        assertEquals(true, creature.beenFed());
+        manticore = new Manticore("Troll");
+        assertEquals(true, manticore.beenFed());
     }
 
     @Test
@@ -55,9 +62,9 @@ public class CreatureTest {
 
     @Test
     public void testInterfaceWithFoodTypes() {
+        manticore = new Manticore("Troll");;
         manticore.feed(meat);
-        manticore.feed(fish);
-        assertEquals(2, manticore.feedAmount());
+        assertEquals(1, manticore.feedAmount());
     }
 
     @Test

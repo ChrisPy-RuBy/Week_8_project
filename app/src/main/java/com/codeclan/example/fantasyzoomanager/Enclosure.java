@@ -1,6 +1,8 @@
 package com.codeclan.example.fantasyzoomanager;
 
 
+import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
+
 import java.util.ArrayList;
 
 /**

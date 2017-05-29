@@ -1,5 +1,7 @@
 package com.codeclan.example.fantasyzoomanager;
 
+import com.codeclan.example.fantasyzoomanager.Foods.Meat;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -19,7 +21,7 @@ public class MeatTest {
     @Test
     public void meatTypeCheck() {
         Meat meat = new Meat();
-        assertEquals(Meat, meat.foodType());
+        assertEquals("meat", meat.foodType());
     }
 
 
