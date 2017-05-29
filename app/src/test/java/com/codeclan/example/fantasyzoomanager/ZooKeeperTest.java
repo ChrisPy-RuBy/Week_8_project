@@ -1,5 +1,7 @@
 package com.codeclan.example.fantasyzoomanager;
 
+import com.codeclan.example.fantasyzoomanager.Enclosures.Enclosure;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;

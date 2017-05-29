@@ -1,4 +1,4 @@
-package com.codeclan.example.fantasyzoomanager;
+package com.codeclan.example.fantasyzoomanager.Enclosures;
 
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;

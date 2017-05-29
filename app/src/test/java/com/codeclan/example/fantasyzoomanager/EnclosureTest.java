@@ -3,6 +3,8 @@ package com.codeclan.example.fantasyzoomanager;
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
 import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
+import com.codeclan.example.fantasyzoomanager.Enclosures.Enclosure;
+import com.codeclan.example.fantasyzoomanager.Enclosures.TheDepthsOfHades;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +22,7 @@ public class EnclosureTest {
 
     @Before
     public void before() {
-        enclosure = new Enclosure("murder room");
+        enclosure = new TheDepthsOfHades("murder room");
         manticore = new Manticore("Garry");
         leviathan = new Leviathan("bazzer");
 //        why doesn't this work if enclosure has the object type infront of it?
@@ -28,14 +30,12 @@ public class EnclosureTest {
 
     @Test
     public void enclosureObjectExists() {
-        Enclosure enclosure = new Enclosure("name");
         assertNotNull(enclosure);
     }
 
     @Test
     public void enclosureHasName() {
-        Enclosure enclosure = new Enclosure("nameOfEnclosure");
-        assertEquals("nameOfEnclosure", enclosure.getName());
+        assertEquals("murder room", enclosure.getName());
     }
 
     @Test
