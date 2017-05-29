@@ -1,5 +1,7 @@
 package com.codeclan.example.fantasyzoomanager.Enclosures;
 
+import com.codeclan.example.fantasyzoomanager.HabitatType;
+
 /**
  * Created by mac on 5/29/17.
  */
@@ -7,6 +9,6 @@ package com.codeclan.example.fantasyzoomanager.Enclosures;
 public class TheGoblinDen extends Enclosure {
 
     public TheGoblinDen(String name) {
-        super(name);
+        super(name, HabitatType.UNDERGROUND);
     }
 }

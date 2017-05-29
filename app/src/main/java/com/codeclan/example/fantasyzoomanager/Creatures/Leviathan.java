@@ -1,6 +1,7 @@
 package com.codeclan.example.fantasyzoomanager.Creatures;
 
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
+import com.codeclan.example.fantasyzoomanager.HabitatType;
 
 import java.util.ArrayList;
 
@@ -10,11 +11,10 @@ import java.util.ArrayList;
 
 public class Leviathan extends Creature {
 
-
     private ArrayList<Feedable> fed;
 
     public Leviathan(String name) {
-        super(name);
+        super(name, HabitatType.DEEPOCEAN);
         fed = new ArrayList<>();
     }
 
@@ -22,4 +22,8 @@ public class Leviathan extends Creature {
         fed.add(food);
         return "NOMNOMNOM";
     }
+
+//    public HabitatType getHabitat() {
+//        return this.habitat;
+//    }
 }

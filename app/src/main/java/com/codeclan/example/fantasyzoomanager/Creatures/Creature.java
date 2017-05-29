@@ -3,6 +3,7 @@ package com.codeclan.example.fantasyzoomanager.Creatures;
 import android.util.Log;
 
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
+import com.codeclan.example.fantasyzoomanager.HabitatType;
 
 import java.util.ArrayList;
 
@@ -12,12 +13,14 @@ import java.util.ArrayList;
 
 public abstract class Creature {
 
-
+    private HabitatType habitat;
     private String name;
     private ArrayList<Feedable> fed = new ArrayList<Feedable>();
 
-    public Creature(String name) {
+    public Creature(String name, HabitatType habitat) {
         this.name = name;
+        this.habitat = habitat;
+
     }
 
     public String getName() {
@@ -35,10 +38,9 @@ public abstract class Creature {
     public String feed(Feedable food) {
         fed.add(food);
         return "NOMNOMNOM";
-
     }
 
-
-
-
+    public HabitatType getHabitat() {
+        return this.habitat ;
+    }
 }

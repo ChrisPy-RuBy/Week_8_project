@@ -1,4 +1,4 @@
-package com.codeclan.example.fantasyzoomanager;
+package com.codeclan.example.fantasyzoomanager.Foods;
 
 import com.codeclan.example.fantasyzoomanager.Foods.Insects;
 

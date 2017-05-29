@@ -1,4 +1,4 @@
-package com.codeclan.example.fantasyzoomanager;
+package com.codeclan.example.fantasyzoomanager.Creatures;
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
 import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
@@ -6,7 +6,9 @@ import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.Foods.Fish;
 import com.codeclan.example.fantasyzoomanager.Foods.Meat;
+import com.codeclan.example.fantasyzoomanager.HabitatType;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -76,5 +78,12 @@ public class CreatureTest {
     public void testInterfaceWithNonAbstractCreaturesAnotherCreature() {
         assertEquals("NOMNOMNOM", leviathan.feed(meat));
     }
+
+    @Test
+    public void giveHabitatType() {
+        Assert.assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());
+    }
+
+
 
 }

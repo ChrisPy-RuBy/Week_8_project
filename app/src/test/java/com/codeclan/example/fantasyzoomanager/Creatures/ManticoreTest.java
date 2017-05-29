@@ -1,11 +1,13 @@
-package com.codeclan.example.fantasyzoomanager;
+package com.codeclan.example.fantasyzoomanager.Creatures;
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.Foods.Fish;
 import com.codeclan.example.fantasyzoomanager.Foods.Meat;
+import com.codeclan.example.fantasyzoomanager.HabitatType;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -52,6 +54,12 @@ public class ManticoreTest {
     public void manticoreHasbeenFedFoodItDontLike() {
         Manticore manticore = new Manticore("Garry");
         assertEquals("Blergh!!!", manticore.feed(fish));
+    }
+
+    @Test
+    public void manticoreLivesUnderground() {
+        Manticore manticore = new Manticore("Garry");
+        Assert.assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());
     }
 
 

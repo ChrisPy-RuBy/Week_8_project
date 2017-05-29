@@ -1,5 +1,7 @@
 package com.codeclan.example.fantasyzoomanager.Enclosures;
 
+import com.codeclan.example.fantasyzoomanager.HabitatType;
+
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -13,6 +15,12 @@ public class DavyJonesLockerTest {
     public void testEnclosureExists() {
         DavyJonesLocker davyjoneslocker = new DavyJonesLocker("murder room");
         assertNotNull(davyjoneslocker);
+    }
+
+    @Test
+    public void testHabitatType() {
+        DavyJonesLocker davyjoneslocker = new DavyJonesLocker("murder room");
+        assertEquals(HabitatType.DEEPOCEAN, davyjoneslocker.getHabitat());
     }
 
 }

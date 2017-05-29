@@ -2,6 +2,7 @@ package com.codeclan.example.fantasyzoomanager.Enclosures;
 
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
+import com.codeclan.example.fantasyzoomanager.HabitatType;
 
 import java.util.ArrayList;
 
@@ -11,11 +12,13 @@ import java.util.ArrayList;
 
 public class Enclosure {
 
+    private HabitatType habitat;
     private String name;
     private ArrayList<Creature> pen;
 //    what is this doing,
-    public Enclosure(String name) {
+    public Enclosure(String name, HabitatType habitat) {
         this.name = name;
+        this.habitat = habitat;
         this.pen = new ArrayList<Creature>();
 
     }
@@ -38,6 +41,10 @@ public class Enclosure {
 
     public void remove(Creature creature) {
         pen.remove(creature);
+    }
+
+    public HabitatType getHabitat() {
+        return this.habitat;
     }
 }
 
