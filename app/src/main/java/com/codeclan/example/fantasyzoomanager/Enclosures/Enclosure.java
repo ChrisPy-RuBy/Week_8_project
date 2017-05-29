@@ -31,8 +31,12 @@ public class Enclosure {
         return pen.size();
     }
 
-    public void addCreature(Creature creature) {
-        pen.add(creature);
+    public String addCreature(Creature creature) {
+       if ((creature.getHabitat()).equals(this.habitat)) {
+           pen.add(creature);
+           return "Creature added!";
+       }
+       return "Dont add that creature here";
     }
 
     public void clearPen() {

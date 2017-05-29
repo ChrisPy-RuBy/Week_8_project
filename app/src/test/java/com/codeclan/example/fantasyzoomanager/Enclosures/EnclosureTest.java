@@ -43,7 +43,7 @@ public class EnclosureTest {
 
     @Test
     public void enclosureHasDifferentName() {
-        assertEquals("murder room", enclosure.getName());
+        assertEquals("FUCK", enclosure2.getName());
     }
 
     @Test
@@ -85,7 +85,22 @@ public class EnclosureTest {
         assertEquals(HabitatType.HELLFIRE, enclosure.getHabitat());
     }
 
+    @Test
+    public void correctEnclosureAdded() {
+        enclosure2.addCreature(manticore);
+        assertEquals(1, enclosure2.numberOfCreaturesInEnclosure());
+        enclosure2.addCreature(leviathan);
+        assertEquals(1, enclosure2.numberOfCreaturesInEnclosure());
+    }
 
+    @Test
+    public void correctEnclosureAddedWithMessage() {
+        assertEquals("Creature added!", enclosure2.addCreature(manticore));
+    }
 
+    @Test
+    public void incorrectEnclosureAddedWithMessage() {
+        assertEquals("Dont add that creature here", enclosure2.addCreature(leviathan));
+    }
 
 }
