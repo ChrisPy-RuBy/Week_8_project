@@ -21,6 +21,7 @@ public abstract class Creature {
         this.name = name;
         this.habitat = habitat;
 
+
     }
 
     public String getName() {
@@ -42,5 +43,9 @@ public abstract class Creature {
 
     public HabitatType getHabitat() {
         return this.habitat ;
+    }
+
+    public String getSex() {
+        return "Nope";
     }
 }

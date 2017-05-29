@@ -13,9 +13,11 @@ public class Manticore extends Creature {
 
     private HabitatType habitat;
     private ArrayList<Feedable> fed = new ArrayList<Feedable>();
+    private String sex;
 
-    public Manticore(String name) {
+    public Manticore(String name, String sex) {
         super(name, HabitatType.UNDERGROUND);
+        this.sex = sex;
     }
 
     public String feed(Feedable food) {
@@ -28,9 +30,9 @@ public class Manticore extends Creature {
         return "Ok but I don't like it";
     }
 
-//    public HabitatType getHabitat() {
-//        return this.habitat;
-//    }
 
+    public String getSex() {
+        return this.sex;
+    }
 }
 

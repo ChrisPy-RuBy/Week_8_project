@@ -18,16 +18,23 @@ import static org.junit.Assert.*;
 public class EnclosureTest {
 
     Enclosure enclosure;
-    Creature manticore;
-    Creature leviathan;
     Enclosure enclosure2;
+    Enclosure enclosure3;
+    Creature manticore;
+    Creature manticore2;
+    Creature manticore3;
+    Creature leviathan;
+
 
     @Before
     public void before() {
         enclosure = new TheDepthsOfHades("murder room");
-        manticore = new Manticore("Garry");
-        leviathan = new Leviathan("bazzer");
         enclosure2 = new TheGoblinDen("FUCK");
+        enclosure3 = new DavyJonesLocker("SHit");
+        manticore = new Manticore("Garry", "m");
+        manticore2 = new Manticore("Garry", "m");
+        manticore3 = new Manticore("Garry", "f");
+        leviathan = new Leviathan("bazzer");
 //        why doesn't this work if enclosure has the object type infront of it?
     }
 
@@ -53,16 +60,16 @@ public class EnclosureTest {
 
     @Test
     public void enclosureHasCreatureInIt() {
-        enclosure.addCreature(manticore);
-        assertEquals(1, enclosure.numberOfCreaturesInEnclosure());
+        enclosure3.addCreature(leviathan);
+        assertEquals(1, enclosure3.numberOfCreaturesInEnclosure());
     }
 
-    @Test
-    public void enclosureHasMultipleCreatures() {
-        enclosure.addCreature(manticore);
-        enclosure.addCreature(leviathan);
-        assertEquals(2, enclosure.numberOfCreaturesInEnclosure());
-    }
+//    @Test
+//    public void enclosureHasMultipleCreatures() {
+//        enclosure.addCreature(manticore);
+//        enclosure.addCreature(leviathan);
+//        assertEquals(2, enclosure.numberOfCreaturesInEnclosure());
+//    }
 
     @Test
     public void  enclosureCanBeCleared() {
@@ -77,7 +84,7 @@ public class EnclosureTest {
         enclosure.addCreature(manticore);
         enclosure.addCreature(leviathan);
         enclosure.remove(manticore);
-        assertEquals(1, enclosure.numberOfCreaturesInEnclosure());
+        assertEquals(0, enclosure.numberOfCreaturesInEnclosure());
     }
 
     @Test
@@ -103,4 +110,30 @@ public class EnclosureTest {
         assertEquals("Dont add that creature here", enclosure2.addCreature(leviathan));
     }
 
+    @Test
+    public void correctMoreEnclosureAdded() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore);
+        assertEquals(3, enclosure2.numberOfCreaturesInEnclosure());
+        enclosure2.addCreature(leviathan);
+        assertEquals(3, enclosure2.numberOfCreaturesInEnclosure());
+    }
+
+    @Test
+    public void correctMoreMoreEnclosureAdded() {
+        enclosure2.addCreature(leviathan);
+        assertEquals(0, enclosure2.numberOfCreaturesInEnclosure());
+    }
+
+//    SEX TESTS
+    @Test
+    public void outputSexOfCreaturesInEnclosure() {
+        assertEquals("Same sex", enclosure2.checkSex(manticore, manticore2));
+    }
+
+    @Test
+    public void outputSexOfCreaturesInEnclosureDifferentSex() {
+        assertEquals("These two should get a room", enclosure2.checkSex(manticore, manticore3));
+    }
 }

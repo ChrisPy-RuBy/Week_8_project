@@ -26,7 +26,7 @@ public class CreatureTest {
 
     @Before
     public void before() {
-        manticore = new Manticore("Troll");
+        manticore = new Manticore("Troll", "m");
         leviathan = new Leviathan("Swimmy");
         meat = new Meat();
         fish = new Fish();
@@ -34,25 +34,21 @@ public class CreatureTest {
 
     @Test
     public void testObjectExists() {
-        manticore = new Manticore("Troll");
         assertNotNull(manticore);
     }
 
     @Test
     public void testCreatureHasPropertySpecies() {
-        manticore = new Manticore("Troll");
         assertEquals("Troll", manticore.getName());
     }
 
     @Test
     public void testCreatureHasPropertyDifferentSpecies() {
-        manticore = new Manticore("Troll");
         assertEquals("Troll", manticore.getName());
     }
 
     @Test
     public void testCreatureHasNoFood() {
-        manticore = new Manticore("Troll");
         assertEquals(true, manticore.beenFed());
     }
 
@@ -64,7 +60,6 @@ public class CreatureTest {
 
     @Test
     public void testInterfaceWithFoodTypes() {
-        manticore = new Manticore("Troll");;
         manticore.feed(meat);
         assertEquals(1, manticore.feedAmount());
     }
@@ -76,7 +71,7 @@ public class CreatureTest {
 
     @Test
     public void testInterfaceWithNonAbstractCreaturesAnotherCreature() {
-        assertEquals("NOMNOMNOM", leviathan.feed(meat));
+        assertEquals("Ok but I don't like it", leviathan.feed(meat));
     }
 
     @Test

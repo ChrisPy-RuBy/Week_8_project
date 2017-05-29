@@ -19,8 +19,13 @@ public class Leviathan extends Creature {
     }
 
     public String feed(Feedable food) {
-        fed.add(food);
-        return "NOMNOMNOM";
+        String foodType = food.foodType();
+        if (foodType.equals("fish")) {
+            return super.feed(food);
+        } else if (foodType.equals("insects")) {
+            return "Blergh!!!";
+        }
+        return "Ok but I don't like it";
     }
 
 //    public HabitatType getHabitat() {

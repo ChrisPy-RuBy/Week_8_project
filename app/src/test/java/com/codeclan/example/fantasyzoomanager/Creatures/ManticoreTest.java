@@ -26,40 +26,40 @@ public class ManticoreTest {
 
     @Before
     public void before(){
-        manticore = new Manticore("Garry");
+        manticore = new Manticore("Garry", "m");
         meat = new Meat();
         fish = new Fish();
     }
 
     @Test
     public void manticoreExists() {
-        Manticore manticore = new Manticore("Garry");
         assertNotNull(manticore);
     }
 
     @Test
-    public void manticoreEatMeat() {
-        Manticore manticore = new Manticore("Garry");
+    public void manticoreEatMeat() {;
         assertEquals("NOMNOMNOM", manticore.feed(meat));
     }
 
     @Test
     public void manticoreEatMeatArraySize() {
-        Manticore manticore = new Manticore("Garry");
         manticore.feed(meat);
         assertEquals(1, manticore.feedAmount());
     }
 
     @Test
     public void manticoreHasbeenFedFoodItDontLike() {
-        Manticore manticore = new Manticore("Garry");
         assertEquals("Blergh!!!", manticore.feed(fish));
     }
 
     @Test
-    public void manticoreLivesUnderground() {
-        Manticore manticore = new Manticore("Garry");
-        Assert.assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());
+    public void manticoreLivesUnderground() {;
+        assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());
+    }
+
+    @Test
+    public void manicoreHasSexTeeHeeGrowUpYouTwat() {
+        assertEquals("m", manticore.getSex());
     }
 
 
