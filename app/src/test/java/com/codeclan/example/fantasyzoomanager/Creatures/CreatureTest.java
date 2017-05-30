@@ -22,6 +22,7 @@ import static org.junit.Assert.*;
 public class CreatureTest {
 
     Creature manticore;
+    Creature manticore2;
     Creature leviathan;
     Creature succubus;
     Feedable goblin;
@@ -34,6 +35,7 @@ public class CreatureTest {
     @Before
     public void before() {
         manticore = new Manticore("Troll", "m");
+        manticore2 = new Manticore("Troll", "f");
         leviathan = new Leviathan("Swimmy");
         succubus = new Succubus("suzy");
         goblin = new Goblin("SnozGlobler");
@@ -140,9 +142,14 @@ public class CreatureTest {
 
     @Test
     public void giveHabitatType() {
-        Assert.assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());
+        assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());
     }
 
+// MATEABLE
 
+    @Test
+    public void canMate() {
+        assertEquals("Can produce a baby", manticore2.mate(manticore2));
+    }
 
 }

@@ -63,6 +63,11 @@ public class ManticoreTest {
         assertEquals("m", manticore.getSex());
     }
 
+    @Test
+    public void manticoreMakeBabyManticore() {
+//        assertEquals(Manticore, manticore.makeBabyManticore());
+        assertNotNull(manticore.makeBabyManticore());
+    }
 
 
 

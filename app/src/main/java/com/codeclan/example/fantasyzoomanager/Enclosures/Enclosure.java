@@ -67,7 +67,7 @@ public class Enclosure {
 
     public String matingPairs() {
         for (Creature creature : pen) {
-           sexesInPen += creature.getSex();
+            sexesInPen += creature.getSex();
         }
         return sexesInPen;
     }
@@ -75,6 +75,17 @@ public class Enclosure {
     public boolean checkMatingString() {
         CharSequence sex1 = "m";
         CharSequence sex2 = "f";
-       return sexesInPen.contains(sex1);
+        return sexesInPen.contains(sex1);
     }
+//
+//
+//    public String makeBaby(Creature creature) {
+//        creature.getClass()
+//
+//        Creature baby = new Creature("baby");
+//                pen.addCreature();
+//        return "a wee bairne";
+//    }
+//}
+
 }

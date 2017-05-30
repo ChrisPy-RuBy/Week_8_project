@@ -165,8 +165,18 @@ public class EnclosureTest {
         enclosure2.addCreature(manticore2);
          enclosure2.matingPairs();
          assertEquals(true, enclosure2.checkMatingString());
-         
     }
+//
+//    @Test
+//    public void produceBaby() {
+//        enclosure2.addCreature(manticore);
+//        enclosure2.addCreature(manticore3);
+//        enclosure2.addCreature(manticore2);
+//        enclosure2.makeBaby();
+//        assertEquals(4, enclosure2.numberOfCreaturesInEnclosure());
+//
+//
+//    }
 
 
 }

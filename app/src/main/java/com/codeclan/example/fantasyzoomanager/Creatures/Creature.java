@@ -53,4 +53,11 @@ public abstract class Creature {
     public String getRoar() {
         return roar;
     }
+
+    public String mate(Creature creature) {
+        if ((creature.getSex().equals("f"))) {
+            return "Can produce a baby";
+        }
+        return "This animal don't work like that";
+    }
 }
