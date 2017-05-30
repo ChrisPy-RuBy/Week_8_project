@@ -155,7 +155,7 @@ public class CreatureTest {
     @Test
     public void manticoreMakeBabyManticore() {
 //        assertEquals(Manticore, manticore.makeBabyManticore());
-        assertTrue(manticore.makeBaby() instanceof Manticore);
+        assertNotNull(manticore2.makeBaby());
     }
 
 }
