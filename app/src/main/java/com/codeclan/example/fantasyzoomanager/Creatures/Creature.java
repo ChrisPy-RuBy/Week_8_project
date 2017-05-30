@@ -14,13 +14,14 @@ import java.util.ArrayList;
 public abstract class Creature {
 
     private HabitatType habitat;
+    private String roar;
     private String name;
-    private ArrayList<Feedable> fed = new ArrayList<Feedable>();
+    protected ArrayList<Feedable> fed = new ArrayList<Feedable>();
 
     public Creature(String name, HabitatType habitat) {
         this.name = name;
         this.habitat = habitat;
-
+        this.roar = "roar";
 
     }
 
@@ -47,5 +48,9 @@ public abstract class Creature {
 
     public String getSex() {
         return "Nope";
+    }
+
+    public String getRoar() {
+        return roar;
     }
 }

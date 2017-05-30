@@ -49,5 +49,12 @@ public class LeviathanTest {
         assertEquals("Blergh!!!", leviathan.feed(insects));
     }
 
+    @Test
+    public void leviathanHasbeenFedFoodTest() {
+        Leviathan leviathan = new Leviathan("Bazzers");
+        leviathan.feed(fish);
+        assertEquals(1, leviathan.feedAmount());
+    }
+
 
 }

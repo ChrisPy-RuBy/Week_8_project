@@ -52,6 +52,7 @@ public class ManticoreTest {
         assertEquals("Blergh!!!", manticore.feed(fish));
     }
 
+
     @Test
     public void manticoreLivesUnderground() {;
         assertEquals(HabitatType.UNDERGROUND, manticore.getHabitat());

@@ -136,4 +136,9 @@ public class EnclosureTest {
     public void outputSexOfCreaturesInEnclosureDifferentSex() {
         assertEquals("These two should get a room", enclosure2.checkSex(manticore, manticore3));
     }
+
+    @Test
+    public void outputSexOfCreaturesInEnclosureMiscSex() {
+        assertEquals("Lets see what happens!", enclosure2.checkSex(manticore, leviathan));
+    }
 }

@@ -12,4 +12,5 @@ public enum HabitatType {
     FOREST,
     DESERT,
     TUNDRA,
+    DUNGEON,
 }

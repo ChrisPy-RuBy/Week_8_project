@@ -12,7 +12,6 @@ import java.util.ArrayList;
 public class Manticore extends Creature {
 
     private HabitatType habitat;
-    private ArrayList<Feedable> fed = new ArrayList<Feedable>();
     private String sex;
 
     public Manticore(String name, String sex) {
@@ -27,6 +26,7 @@ public class Manticore extends Creature {
         } else if (foodType.equals("fish")) {
             return "Blergh!!!";
         }
+        fed.add(food);
         return "Ok but I don't like it";
     }
 
@@ -34,5 +34,7 @@ public class Manticore extends Creature {
     public String getSex() {
         return this.sex;
     }
+
+
 }
 

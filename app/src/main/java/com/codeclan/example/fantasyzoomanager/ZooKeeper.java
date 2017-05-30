@@ -24,7 +24,6 @@ public class ZooKeeper {
         enclosures.add(enclosure);
     }
 
-
 }
 
 

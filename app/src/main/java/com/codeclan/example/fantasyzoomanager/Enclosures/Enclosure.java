@@ -59,7 +59,7 @@ public class Enclosure {
         } else if ((creature1.getSex().equals("m") && (creature2.getSex().equals("f"))) || ((creature1.getSex().equals("f") && (creature2.getSex().equals("m"))))) {
             return "These two should get a room";
         }
-        return null;
+        return "Lets see what happens!";
     }
 }
 
