@@ -17,6 +17,7 @@ public class Enclosure {
     private String name;
     private ArrayList<Creature> pen;
     private String sexesInPen;
+    private int femaleCounter;
 
     //    what is this doing,
     public Enclosure(String name, HabitatType habitat) {
@@ -24,6 +25,8 @@ public class Enclosure {
         this.habitat = habitat;
         this.pen = new ArrayList<Creature>();
         this.sexesInPen = "";
+        this.femaleCounter = 0;
+
 
     }
 
@@ -66,8 +69,14 @@ public class Enclosure {
 
 
     public String matingPairs() {
+        ;
         for (Creature creature : pen) {
             sexesInPen += creature.getSex();
+            {
+                if ((creature.getSex().equals("f"))) {
+                    femaleCounter += 1;
+                }
+            }
         }
         return sexesInPen;
     }
@@ -75,17 +84,16 @@ public class Enclosure {
     public boolean checkMatingString() {
         CharSequence sex1 = "m";
         CharSequence sex2 = "f";
-        return sexesInPen.contains(sex1);
+        return (sexesInPen.contains(sex1) && sexesInPen.contains(sex2));
     }
-//
-//
-//    public String makeBaby(Creature creature) {
-//        creature.getClass()
-//
-//        Creature baby = new Creature("baby");
-//                pen.addCreature();
-//        return "a wee bairne";
-//    }
-//}
 
+    public int getNumberFemales() {
+        return femaleCounter;
+    }
+
+    public void produceBabies(Creature creature) {
+        for(int i=0; i<this.femaleCounter; i++) {
+            pen.add(creature.makeBaby());
+        }
+    }
 }

@@ -72,7 +72,7 @@ public class EnclosureTest {
 //    }
 
     @Test
-    public void  enclosureCanBeCleared() {
+    public void enclosureCanBeCleared() {
         enclosure.addCreature(manticore);
         enclosure.addCreature(leviathan);
         enclosure.clearPen();
@@ -126,7 +126,7 @@ public class EnclosureTest {
         assertEquals(0, enclosure2.numberOfCreaturesInEnclosure());
     }
 
-//    SEX TESTS
+    //    SEX TESTS
     @Test
     public void outputSexOfCreaturesInEnclosure() {
         assertEquals("Same sex", enclosure2.checkSex(manticore, manticore2));
@@ -158,25 +158,47 @@ public class EnclosureTest {
         assertEquals("mfm", enclosure2.matingPairs());
     }
 
-     @Test
+    @Test
     public void containsSexBoolean() {
         enclosure2.addCreature(manticore);
         enclosure2.addCreature(manticore3);
         enclosure2.addCreature(manticore2);
-         enclosure2.matingPairs();
-         assertEquals(true, enclosure2.checkMatingString());
+        enclosure2.matingPairs();
+        assertEquals(true, enclosure2.checkMatingString());
     }
-//
-//    @Test
-//    public void produceBaby() {
-//        enclosure2.addCreature(manticore);
-//        enclosure2.addCreature(manticore3);
-//        enclosure2.addCreature(manticore2);
-//        enclosure2.makeBaby();
-//        assertEquals(4, enclosure2.numberOfCreaturesInEnclosure());
-//
-//
-//    }
+
+    @Test
+    public void containsSexBooleanSausageFest() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore);
+        enclosure2.matingPairs();
+        assertEquals(false, enclosure2.checkMatingString());
+    }
+
+    @Test
+    public void numberOfFemales() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore3);
+        enclosure2.addCreature(manticore2);
+        enclosure2.matingPairs();
+        assertEquals(1, enclosure2.getNumberFemales());
+    }
+
+    @Test
+    public void getBabies() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore3);
+        enclosure2.addCreature(manticore3);
+        enclosure2.addCreature(manticore3);
+        enclosure2.addCreature(manticore2);
+        enclosure2.matingPairs();
+        enclosure2.getNumberFemales();
+        enclosure2.produceBabies(manticore2);
+        assertEquals(8, enclosure2.numberOfCreaturesInEnclosure());
 
 
+
+    }
 }
+

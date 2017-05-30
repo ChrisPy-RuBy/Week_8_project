@@ -152,4 +152,10 @@ public class CreatureTest {
         assertEquals("Can produce a baby", manticore2.mate(manticore2));
     }
 
+    @Test
+    public void manticoreMakeBabyManticore() {
+//        assertEquals(Manticore, manticore.makeBabyManticore());
+        assertTrue(manticore.makeBaby() instanceof Manticore);
+    }
+
 }

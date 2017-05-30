@@ -20,6 +20,7 @@ public class ManticoreTest {
 
 
     Manticore manticore;
+    Manticore manticore2;
     Feedable meat;
     Feedable fish;
     Creature creature;
@@ -27,6 +28,7 @@ public class ManticoreTest {
     @Before
     public void before(){
         manticore = new Manticore("Garry", "m");
+        manticore2 = new Manticore("Bella", "f");
         meat = new Meat();
         fish = new Fish();
     }
@@ -66,8 +68,10 @@ public class ManticoreTest {
     @Test
     public void manticoreMakeBabyManticore() {
 //        assertEquals(Manticore, manticore.makeBabyManticore());
-        assertNotNull(manticore.makeBabyManticore());
+        assertTrue(manticore2.makeBaby() instanceof Manticore);
     }
+
+
 
 
 

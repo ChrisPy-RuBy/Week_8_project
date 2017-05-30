@@ -35,9 +35,13 @@ public class Manticore extends Creature {
         return this.sex;
     }
 
-    public Manticore makeBabyManticore() {
-        Manticore newManticore = (new Manticore("baby", "f"));
-        return newManticore;
+    public Creature makeBaby() {
+        if (this.sex.equals("f")) {
+            Manticore newManticore = (new Manticore("baby", "f"));
+            return newManticore;
+        }
+        else { return super.makeBaby();
+        }
     }
 }
 

@@ -60,4 +60,8 @@ public abstract class Creature {
         }
         return "This animal don't work like that";
     }
+
+    public Creature makeBaby() {
+        return null;
+    }
 }
