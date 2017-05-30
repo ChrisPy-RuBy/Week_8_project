@@ -141,4 +141,32 @@ public class EnclosureTest {
     public void outputSexOfCreaturesInEnclosureMiscSex() {
         assertEquals("Lets see what happens!", enclosure2.checkSex(manticore, leviathan));
     }
+
+    @Test
+    public void containsSex() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore2);
+        enclosure2.addCreature(manticore2);
+        assertEquals("mmm", enclosure2.matingPairs());
+    }
+
+    @Test
+    public void containsSexDifferentOrder() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore3);
+        enclosure2.addCreature(manticore2);
+        assertEquals("mfm", enclosure2.matingPairs());
+    }
+
+     @Test
+    public void containsSexBoolean() {
+        enclosure2.addCreature(manticore);
+        enclosure2.addCreature(manticore3);
+        enclosure2.addCreature(manticore2);
+         enclosure2.matingPairs();
+         assertEquals(true, enclosure2.checkMatingString());
+         
+    }
+
+
 }

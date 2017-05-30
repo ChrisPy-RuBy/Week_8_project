@@ -1,12 +1,14 @@
 package com.codeclan.example.fantasyzoomanager;
 
+import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
+
 import dalvik.annotation.TestTargetClass;
 
 /**
  * Created by mac on 5/29/17.
  */
 
-public class Visitor {
+public class Visitor implements Feedable {
 
     private String name;
 
@@ -16,5 +18,9 @@ public class Visitor {
 
     public String getName() {
         return name;
+    }
+
+    public String foodType() {
+        return "human";
     }
 }

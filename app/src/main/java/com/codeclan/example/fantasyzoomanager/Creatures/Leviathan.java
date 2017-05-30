@@ -13,11 +13,9 @@ import java.util.ArrayList;
 
 public class Leviathan extends Creature {
 
-//    private ArrayList<Feedable> fed;
 
     public Leviathan(String name) {
         super(name, HabitatType.DEEPOCEAN);
-//        fed = new ArrayList<>();
     }
 
     public String feed(Feedable food) {

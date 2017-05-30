@@ -11,11 +11,9 @@ import java.util.ArrayList;
 
 public class Succubus extends Creature {
 
-    private ArrayList<Feedable> fed;
 
     public Succubus(String name) {
         super(name, HabitatType.DUNGEON);
-        fed = new ArrayList<>();
     }
 
 

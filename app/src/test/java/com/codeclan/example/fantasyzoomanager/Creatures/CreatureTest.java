@@ -8,6 +8,7 @@ import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.Foods.Fish;
 import com.codeclan.example.fantasyzoomanager.Foods.Meat;
 import com.codeclan.example.fantasyzoomanager.HabitatType;
+import com.codeclan.example.fantasyzoomanager.Visitor;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -26,6 +27,7 @@ public class CreatureTest {
     Feedable goblin;
     Feedable meat;
     Feedable fish;
+    Feedable visitor;
 
 
 
@@ -35,6 +37,7 @@ public class CreatureTest {
         leviathan = new Leviathan("Swimmy");
         succubus = new Succubus("suzy");
         goblin = new Goblin("SnozGlobler");
+        visitor = new Visitor("Garry");
         meat = new Meat();
         fish = new Fish();
     }
@@ -125,6 +128,12 @@ public class CreatureTest {
         manticore.feed(goblin);
         manticore.feed(meat);
         assertEquals(2, manticore.feedAmount());
+    }
+
+    @Test
+    public void humansAreEdible() {
+        manticore.feed(visitor);
+        assertEquals(1, manticore.feedAmount());
     }
 
 //    HABITAT

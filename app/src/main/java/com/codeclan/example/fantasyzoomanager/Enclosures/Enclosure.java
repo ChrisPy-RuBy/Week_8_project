@@ -16,12 +16,14 @@ public class Enclosure {
     private HabitatType habitat;
     private String name;
     private ArrayList<Creature> pen;
+    private String sexesInPen;
 
     //    what is this doing,
     public Enclosure(String name, HabitatType habitat) {
         this.name = name;
         this.habitat = habitat;
         this.pen = new ArrayList<Creature>();
+        this.sexesInPen = "";
 
     }
 
@@ -61,5 +63,18 @@ public class Enclosure {
         }
         return "Lets see what happens!";
     }
-}
 
+
+    public String matingPairs() {
+        for (Creature creature : pen) {
+           sexesInPen += creature.getSex();
+        }
+        return sexesInPen;
+    }
+
+    public boolean checkMatingString() {
+        CharSequence sex1 = "m";
+        CharSequence sex2 = "f";
+       return sexesInPen.contains(sex1);
+    }
+}
