@@ -1,5 +1,6 @@
 package com.codeclan.example.fantasyzoomanager.Creatures;
 
+import com.codeclan.example.fantasyzoomanager.Enclosures.Breedable;
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.HabitatType;
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
  * Created by mac on 5/28/17.
  */
 
-public class Manticore extends Creature {
+public class Manticore extends Creature implements Breedable {
 
     private HabitatType habitat;
     private String sex;
@@ -43,5 +44,7 @@ public class Manticore extends Creature {
         else { return super.makeBaby();
         }
     }
+
+
 }
 

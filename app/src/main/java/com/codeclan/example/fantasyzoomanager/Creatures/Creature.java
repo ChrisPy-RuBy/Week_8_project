@@ -25,6 +25,10 @@ public abstract class Creature {
 
     }
 
+    public ArrayList<Feedable> getFed() {
+        return fed;
+    }
+
     public String getName() {
         return name;
     }

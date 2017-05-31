@@ -2,6 +2,7 @@ package com.codeclan.example.fantasyzoomanager.Enclosures;
 
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
+import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 
@@ -57,6 +58,9 @@ public class Enclosure {
         return this.habitat;
     }
 
+
+
+
     public String checkSex(Creature creature1, Creature creature2) {
         if ((creature1.getSex()).equals(creature2.getSex())) {
             return "Same sex";
@@ -98,6 +102,7 @@ public class Enclosure {
         }
     }
 
+//Only for goblins
 
     public void creatureClone(Creature creature) {
         for(int i=0; i<this.goblinCounter; i++) {
@@ -106,7 +111,8 @@ public class Enclosure {
 
     }
 
-//
+//    only for Succubus
+
     public void inticeMale( FeedableAndEnticable visitor, Creature creature) {
        if (visitor.getSex().equals("m")) {
             creature.feed(visitor);
@@ -117,5 +123,22 @@ public class Enclosure {
 
         }
 
-   }
+    public void goblinBreed(Creature creature) {
+        matingPairs();
+        creatureClone(creature);
+    }
+
+
+    public void newBabiesToEnclosure(ArrayList<Feedable> fed) {
+        for (Feedable food : fed) {
+            if (food.foodType().equals("leviathan")) {
+                pen.add((Creature)food);
+            }
+        }
+    }
+
+
+
+
+}
 

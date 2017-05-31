@@ -7,6 +7,7 @@ import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
 import com.codeclan.example.fantasyzoomanager.Creatures.Succubus;
 import com.codeclan.example.fantasyzoomanager.Enclosures.Enclosure;
 import com.codeclan.example.fantasyzoomanager.Enclosures.TheDepthsOfHades;
+import com.codeclan.example.fantasyzoomanager.Foods.Ambergris;
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.HabitatType;
 import com.codeclan.example.fantasyzoomanager.Visitor;
@@ -33,6 +34,7 @@ public class EnclosureTest {
     Creature succubus;
     FeedableAndEnticable visitor;
     FeedableAndEnticable visitor2;
+    Feedable ambergris;
 
 
 
@@ -51,6 +53,7 @@ public class EnclosureTest {
         goblin = new Goblin("Snozgrobler");
         visitor = new Visitor("Daniel", "m");
         visitor2 = new Visitor("Gill", "f");
+        ambergris = new Ambergris();
 //        why doesn't this work if enclosure has the object type infront of it?
     }
 
@@ -225,6 +228,14 @@ public class EnclosureTest {
 
         }
 
+    @Test
+    public void goblinCloningCombinedMethods() {
+        enclosure2.addCreature(goblin);
+        enclosure2.addCreature(goblin);
+        enclosure2.goblinBreed(goblin);
+        assertEquals(4, enclosure2.numberOfCreaturesInEnclosure());
+    }
+
 //   Succubus raping and eating
 
     @Test
@@ -250,6 +261,27 @@ public class EnclosureTest {
         enclosure4.inticeMale(visitor, succubus);
         assertEquals(4, enclosure4.numberOfCreaturesInEnclosure());
     }
+
+    @Test
+    public void leviathanVomitsBabiesIntoEnclosure() {
+        Leviathan leviathan = new Leviathan("Bazzers");
+        enclosure3.addCreature(leviathan);
+        leviathan.feed(ambergris);
+        enclosure3.newBabiesToEnclosure(leviathan.getFed());
+        assertEquals(6, enclosure3.numberOfCreaturesInEnclosure());
+    }
+
+    @Test
+    public void leviathanVomitsBabiesIntoEnclosureSecond() {
+        Leviathan leviathan = new Leviathan("Bazzers");
+        enclosure3.addCreature(leviathan);
+        leviathan.feed(ambergris);
+        leviathan.feed(ambergris);
+        enclosure3.newBabiesToEnclosure(leviathan.getFed());
+        assertEquals(11, enclosure3.numberOfCreaturesInEnclosure());
+    }
+
+
     }
 
 

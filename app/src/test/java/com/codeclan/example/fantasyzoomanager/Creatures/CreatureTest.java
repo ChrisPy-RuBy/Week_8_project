@@ -4,6 +4,7 @@ import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
 import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
 import com.codeclan.example.fantasyzoomanager.Creatures.Succubus;
+import com.codeclan.example.fantasyzoomanager.Foods.Ambergris;
 import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.Foods.Fish;
 import com.codeclan.example.fantasyzoomanager.Foods.Meat;
@@ -29,6 +30,7 @@ public class CreatureTest {
     Feedable meat;
     Feedable fish;
     Feedable visitor;
+    Feedable ambergris;
 
 
 
@@ -42,6 +44,7 @@ public class CreatureTest {
         visitor = new Visitor("Garry", "m");
         meat = new Meat();
         fish = new Fish();
+        ambergris = new Ambergris();
     }
 
 //    BASICS
@@ -158,4 +161,20 @@ public class CreatureTest {
         assertNotNull(manticore2.makeBaby());
     }
 
-}
+    @Test
+    public void leviathanEatsAmbris() {
+        leviathan.feed(ambergris);
+        assertEquals(5, leviathan.feedAmount());
+    }
+
+//    @Test
+//    public void leviathanVomitsBabies() {
+//        leviathan.feed(ambergris);
+//        leviathan.vomitBabies();
+//        assertEquals(0, leviathan.feedAmount());
+//    }
+
+    }
+
+
+
