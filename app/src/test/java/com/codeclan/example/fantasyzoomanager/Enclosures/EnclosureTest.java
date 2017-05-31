@@ -239,10 +239,17 @@ public class EnclosureTest {
         enclosure4.addCreature(succubus);
         enclosure4.inticeMale(visitor2, succubus);
         assertEquals(1, enclosure4.numberOfCreaturesInEnclosure());
-
-
     }
 
+
+    @Test
+    public void inticeMaleMoreTests() {
+        enclosure4.addCreature(succubus);
+        enclosure4.inticeMale(visitor, succubus);
+        enclosure4.inticeMale(visitor, succubus);
+        enclosure4.inticeMale(visitor, succubus);
+        assertEquals(4, enclosure4.numberOfCreaturesInEnclosure());
+    }
     }
 
 
