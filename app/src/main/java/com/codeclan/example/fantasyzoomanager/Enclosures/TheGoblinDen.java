@@ -8,7 +8,7 @@ import com.codeclan.example.fantasyzoomanager.HabitatType;
 
 public class TheGoblinDen extends Enclosure {
 
-    public TheGoblinDen(String name) {
-        super(name, HabitatType.UNDERGROUND);
+    public TheGoblinDen() {
+        super(HabitatType.UNDERGROUND);
     }
 }

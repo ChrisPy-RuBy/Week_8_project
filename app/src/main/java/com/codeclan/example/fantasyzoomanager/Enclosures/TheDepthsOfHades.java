@@ -9,8 +9,8 @@ import com.codeclan.example.fantasyzoomanager.HabitatType;
 public class TheDepthsOfHades extends Enclosure {
 
 
-    public TheDepthsOfHades(String name) {
-        super(name, HabitatType.HELLFIRE);
+    public TheDepthsOfHades() {
+        super(HabitatType.HELLFIRE);
     }
 
 }

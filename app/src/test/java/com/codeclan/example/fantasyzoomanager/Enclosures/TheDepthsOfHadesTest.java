@@ -11,7 +11,7 @@ public class TheDepthsOfHadesTest {
 
     @Test
     public void testEnclosureExists() {
-        TheDepthsOfHades thedepthsofhades = new TheDepthsOfHades("murder room");
+        TheDepthsOfHades thedepthsofhades = new TheDepthsOfHades();
         assertNotNull(thedepthsofhades);
     }
 }

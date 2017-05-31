@@ -11,7 +11,7 @@ public class TheGoblinDenTest {
 
     @Test
     public void testEnclosureExists() {
-        TheGoblinDen thegoblinden = new TheGoblinDen("murder room");
+        TheGoblinDen thegoblinden = new TheGoblinDen();
         assertNotNull(thegoblinden);
     }
 }

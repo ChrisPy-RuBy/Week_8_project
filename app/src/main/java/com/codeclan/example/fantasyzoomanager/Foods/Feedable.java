@@ -7,5 +7,7 @@ package com.codeclan.example.fantasyzoomanager.Foods;
 public interface Feedable {
 
     String foodType();
+
+//    String getSex();
 }
 

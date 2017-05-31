@@ -17,7 +17,7 @@ public class ZooKeeperTest {
 
     @Before
     public void before() {
-        TheGoblinDen thegoblinden = new TheGoblinDen("murder room");
+        TheGoblinDen thegoblinden = new TheGoblinDen();
     }
 
     @Test

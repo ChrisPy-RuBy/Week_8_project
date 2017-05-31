@@ -39,7 +39,7 @@ public class CreatureTest {
         leviathan = new Leviathan("Swimmy");
         succubus = new Succubus("suzy");
         goblin = new Goblin("SnozGlobler");
-        visitor = new Visitor("Garry");
+        visitor = new Visitor("Garry", "m");
         meat = new Meat();
         fish = new Fish();
     }

@@ -13,13 +13,13 @@ public class DavyJonesLockerTest {
 
     @Test
     public void testEnclosureExists() {
-        DavyJonesLocker davyjoneslocker = new DavyJonesLocker("murder room");
+        DavyJonesLocker davyjoneslocker = new DavyJonesLocker();
         assertNotNull(davyjoneslocker);
     }
 
     @Test
     public void testHabitatType() {
-        DavyJonesLocker davyjoneslocker = new DavyJonesLocker("murder room");
+        DavyJonesLocker davyjoneslocker = new DavyJonesLocker();
         assertEquals(HabitatType.DEEPOCEAN, davyjoneslocker.getHabitat());
     }
 

@@ -4,9 +4,12 @@ import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
 import com.codeclan.example.fantasyzoomanager.Creatures.Goblin;
 import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
+import com.codeclan.example.fantasyzoomanager.Creatures.Succubus;
 import com.codeclan.example.fantasyzoomanager.Enclosures.Enclosure;
 import com.codeclan.example.fantasyzoomanager.Enclosures.TheDepthsOfHades;
+import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
 import com.codeclan.example.fantasyzoomanager.HabitatType;
+import com.codeclan.example.fantasyzoomanager.Visitor;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -21,23 +24,33 @@ public class EnclosureTest {
     Enclosure enclosure;
     Enclosure enclosure2;
     Enclosure enclosure3;
+    Enclosure enclosure4;
     Creature manticore;
     Creature manticore2;
     Creature manticore3;
     Creature leviathan;
     Creature goblin;
+    Creature succubus;
+    FeedableAndEnticable visitor;
+    FeedableAndEnticable visitor2;
+
+
 
 
     @Before
     public void before() {
-        enclosure = new TheDepthsOfHades("murder room");
-        enclosure2 = new TheGoblinDen("FUCK");
-        enclosure3 = new DavyJonesLocker("SHit");
+        enclosure = new TheDepthsOfHades();
+        enclosure2 = new TheGoblinDen();
+        enclosure3 = new DavyJonesLocker();
+        enclosure4 = new SexDungeon();
         manticore = new Manticore("Garry", "m");
         manticore2 = new Manticore("Garry", "m");
         manticore3 = new Manticore("Garry", "f");
         leviathan = new Leviathan("bazzer");
+        succubus = new Succubus("Mandy");
         goblin = new Goblin("Snozgrobler");
+        visitor = new Visitor("Daniel", "m");
+        visitor2 = new Visitor("Gill", "f");
 //        why doesn't this work if enclosure has the object type infront of it?
     }
 
@@ -46,15 +59,15 @@ public class EnclosureTest {
         assertNotNull(enclosure);
     }
 
-    @Test
-    public void enclosureHasName() {
-        assertEquals("murder room", enclosure.getName());
-    }
-
-    @Test
-    public void enclosureHasDifferentName() {
-        assertEquals("FUCK", enclosure2.getName());
-    }
+//    @Test
+//    public void enclosureHasName() {
+//        assertEquals("murder room", enclosure.getName());
+//    }
+//
+//    @Test
+//    public void enclosureHasDifferentName() {
+//        assertEquals("FUCK", enclosure2.getName());
+//    }
 
     @Test
     public void enclosureHasAnimalContainerProperty() {
@@ -201,6 +214,8 @@ public class EnclosureTest {
         assertEquals(8, enclosure2.numberOfCreaturesInEnclosure());
     }
 
+//   Goblin cloning
+
     @Test
     public void cloneGoblins() {
         enclosure2.addCreature(goblin);
@@ -209,6 +224,24 @@ public class EnclosureTest {
         assertEquals(2, enclosure2.numberOfCreaturesInEnclosure());
 
         }
+
+//   Succubus raping
+
+    @Test
+    public void inticeMale() {
+        enclosure4.addCreature(succubus);
+        enclosure4.inticeMale(visitor, succubus);
+        assertEquals(2, enclosure4.numberOfCreaturesInEnclosure());
+    }
+
+    @Test
+    public void inticeMaleAndEatFemale() {
+        enclosure4.addCreature(succubus);
+        enclosure4.inticeMale(visitor2, succubus);
+        assertEquals(1, enclosure4.numberOfCreaturesInEnclosure());
+
+
+    }
 
     }
 

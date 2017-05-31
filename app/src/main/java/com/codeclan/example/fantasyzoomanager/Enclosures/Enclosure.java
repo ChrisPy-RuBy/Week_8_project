@@ -3,6 +3,8 @@ package com.codeclan.example.fantasyzoomanager.Enclosures;
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
+import com.codeclan.example.fantasyzoomanager.Foods.Feedable;
+
 import com.codeclan.example.fantasyzoomanager.HabitatType;
 
 import java.util.ArrayList;
@@ -14,15 +16,13 @@ import java.util.ArrayList;
 public class Enclosure {
 
     private HabitatType habitat;
-    private String name;
     private ArrayList<Creature> pen;
     private String sexesInPen;
     private int femaleCounter;
     private int goblinCounter;
 
     //    what is this doing,
-    public Enclosure(String name, HabitatType habitat) {
-        this.name = name;
+    public Enclosure(HabitatType habitat) {
         this.habitat = habitat;
         this.pen = new ArrayList<Creature>();
         this.sexesInPen = "";
@@ -32,9 +32,9 @@ public class Enclosure {
 
     }
 
-    public String getName() {
-        return name;
-    }
+//    public String getName() {
+//        return name;
+//    }
 
     public int numberOfCreaturesInEnclosure() {
         return pen.size();
@@ -106,5 +106,19 @@ public class Enclosure {
         for(int i=0; i<this.goblinCounter; i++) {
             pen.add(creature.makeBaby());
         }
+
     }
-}
+
+//
+    public void inticeMale( FeedableAndEnticable visitor, Creature creature) {
+       if (visitor.getSex().equals("m")) {
+            creature.feed(visitor);
+            pen.add(creature.makeBaby());
+        }
+        else { creature.feed(visitor);
+        }
+
+        }
+
+   }
+

@@ -20,4 +20,9 @@ public class Succubus extends Creature {
     public String getRoar() {
         return "Oh a man!";
     }
+
+    public Creature makeBaby() {
+        Succubus succubus = new Succubus("Tiffany");
+        return succubus;
+    }
 }

@@ -11,8 +11,8 @@ public class DavyJonesLocker extends Enclosure {
 
     private HabitatType habitat;
 
-    public DavyJonesLocker(String name) {
-        super(name, HabitatType.DEEPOCEAN);
+    public DavyJonesLocker() {
+        super(HabitatType.DEEPOCEAN);
     }
 }
 

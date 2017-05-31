@@ -1,5 +1,6 @@
 package com.codeclan.example.fantasyzoomanager;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,6 +10,14 @@ import static org.junit.Assert.*;
  */
 public class BoxOfficeTest {
 
+    Visitor visitor;
+
+    @Before
+    public void before() {
+
+        visitor = new Visitor("Daniel", "m");
+
+    }
 
     @Test
     public void boxOfficeExists() {
@@ -19,7 +28,6 @@ public class BoxOfficeTest {
     @Test
     public void addVistorToPark() {
         BoxOffice boxoffice = new BoxOffice();
-        Visitor visitor = new Visitor("Garry");
         boxoffice.addVisitor(visitor);
         assertEquals(1, boxoffice.totalVisitors());
     }
@@ -27,7 +35,6 @@ public class BoxOfficeTest {
     @Test
     public void dailyTakings() {
         BoxOffice boxoffice = new BoxOffice();
-        Visitor visitor = new Visitor("Garry");
         boxoffice.addVisitor(visitor);
         assertEquals(7, boxoffice.totaltakings());
     }
