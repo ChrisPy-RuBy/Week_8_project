@@ -32,9 +32,6 @@ public class Enclosure {
 
     }
 
-//    public String getName() {
-//        return name;
-//    }
 
     public int numberOfCreaturesInEnclosure() {
         return pen.size();

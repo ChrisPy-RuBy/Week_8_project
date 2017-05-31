@@ -225,7 +225,7 @@ public class EnclosureTest {
 
         }
 
-//   Succubus raping
+//   Succubus raping and eating
 
     @Test
     public void inticeMale() {

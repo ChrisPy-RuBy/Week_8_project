@@ -67,7 +67,6 @@ public class ManticoreTest {
 
     @Test
     public void manticoreMakeBabyManticore() {
-//        assertEquals(Manticore, manticore.makeBabyManticore());
         assertTrue(manticore2.makeBaby() instanceof Manticore);
     }
 

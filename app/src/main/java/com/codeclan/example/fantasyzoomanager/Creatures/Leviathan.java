@@ -26,9 +26,7 @@ public class Leviathan extends Creature {
             return "Blergh!!!";
         }
         else {
-//            Log.d("before", new Integer(fed.size()).toString());
             fed.add(food);
-//            Log.d("after", new Integer(fed.size()).toString());
             return "Ok but I don't like it";
         }
     }
@@ -37,7 +35,4 @@ public class Leviathan extends Creature {
         return "screech";
     }
 
-//    public HabitatType getHabitat() {
-//        return this.habitat;
-//    }
 }
