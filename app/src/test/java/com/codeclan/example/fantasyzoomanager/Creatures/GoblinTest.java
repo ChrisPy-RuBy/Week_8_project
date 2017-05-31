@@ -16,5 +16,11 @@ public class GoblinTest {
         assertNotNull(goblin);
     }
 
+    @Test
+    public void goblinClone() {
+        Goblin goblin = new Goblin("SnozGlobler");
+        assertEquals("c", goblin.getSex());
+    }
+
 
 }

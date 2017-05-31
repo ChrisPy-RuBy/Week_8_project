@@ -1,6 +1,7 @@
 package com.codeclan.example.fantasyzoomanager.Enclosures;
 
 import com.codeclan.example.fantasyzoomanager.Creatures.Creature;
+import com.codeclan.example.fantasyzoomanager.Creatures.Goblin;
 import com.codeclan.example.fantasyzoomanager.Creatures.Leviathan;
 import com.codeclan.example.fantasyzoomanager.Creatures.Manticore;
 import com.codeclan.example.fantasyzoomanager.Enclosures.Enclosure;
@@ -24,6 +25,7 @@ public class EnclosureTest {
     Creature manticore2;
     Creature manticore3;
     Creature leviathan;
+    Creature goblin;
 
 
     @Before
@@ -35,6 +37,7 @@ public class EnclosureTest {
         manticore2 = new Manticore("Garry", "m");
         manticore3 = new Manticore("Garry", "f");
         leviathan = new Leviathan("bazzer");
+        goblin = new Goblin("Snozgrobler");
 //        why doesn't this work if enclosure has the object type infront of it?
     }
 
@@ -196,9 +199,17 @@ public class EnclosureTest {
         enclosure2.getNumberFemales();
         enclosure2.produceBabies(manticore2);
         assertEquals(8, enclosure2.numberOfCreaturesInEnclosure());
+    }
 
+    @Test
+    public void cloneGoblins() {
+        enclosure2.addCreature(goblin);
+        enclosure2.matingPairs();
+        enclosure2.creatureClone(goblin);
+        assertEquals(2, enclosure2.numberOfCreaturesInEnclosure());
 
+        }
 
     }
-}
+
 

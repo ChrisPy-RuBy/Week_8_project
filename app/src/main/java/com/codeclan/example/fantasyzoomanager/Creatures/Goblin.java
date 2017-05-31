@@ -19,14 +19,22 @@ public class Goblin extends Creature implements Feedable {
 
     public Goblin(String name) {
         super(name, HabitatType.UNDERGROUND);
+        this.sex = "c";
     }
+
 
     public String foodType() {
         return "goblin";
     }
 
 
+    public String getSex() {
+        return this.sex;
+    }
 
-
+    public Creature makeBaby() {
+            Goblin goblin = new Goblin("snozgrobler");
+            return goblin;
+        }
 
 }

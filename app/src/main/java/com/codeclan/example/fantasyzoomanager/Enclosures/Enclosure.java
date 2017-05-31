@@ -18,6 +18,7 @@ public class Enclosure {
     private ArrayList<Creature> pen;
     private String sexesInPen;
     private int femaleCounter;
+    private int goblinCounter;
 
     //    what is this doing,
     public Enclosure(String name, HabitatType habitat) {
@@ -26,6 +27,7 @@ public class Enclosure {
         this.pen = new ArrayList<Creature>();
         this.sexesInPen = "";
         this.femaleCounter = 0;
+        this.goblinCounter = 0;
 
 
     }
@@ -75,6 +77,8 @@ public class Enclosure {
             {
                 if ((creature.getSex().equals("f"))) {
                     femaleCounter += 1;
+                } else if ((creature.getSex().equals("c"))) {
+                    goblinCounter += 1;
                 }
             }
         }
@@ -93,6 +97,13 @@ public class Enclosure {
 
     public void produceBabies(Creature creature) {
         for(int i=0; i<this.femaleCounter; i++) {
+            pen.add(creature.makeBaby());
+        }
+    }
+
+
+    public void creatureClone(Creature creature) {
+        for(int i=0; i<this.goblinCounter; i++) {
             pen.add(creature.makeBaby());
         }
     }
